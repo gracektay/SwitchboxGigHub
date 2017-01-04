@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using GigHub.Dtos;
+﻿using GigHub.Dtos;
 using GigHub.Models;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using System.Web.Http;
 
 namespace GigHub.Controllers
 {
@@ -19,20 +15,21 @@ namespace GigHub.Controllers
             _context = new ApplicationDbContext();
         }
 
+
         [HttpPost]
         public IHttpActionResult Attend(FollowingDto dto)
         {
             var userId = User.Identity.GetUserId();
 
-            if (_context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == dto.FollowId))
-                return BadRequest("You've already followed this artist!");
+            if(_context.Followings.Any(f => f.FolloweeId == userId && f.FollowerId == dto.FolloweeId))
+                return BadRequest("The attendance already exists!");
 
-            var attendance = new Attendance
+            var following = new Following
             {
-                GigId = dto.FollowId,
-                AttendeeId = userId
+                FollowerId = userId,
+                FolloweeId = dto.FolloweeId
             };
-            _context.Attendances.Add(attendance);
+            _context.Followings.Add(following);
             _context.SaveChanges();
 
             return Ok();

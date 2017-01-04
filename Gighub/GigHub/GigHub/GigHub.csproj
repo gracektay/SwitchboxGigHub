@@ -226,6 +226,14 @@
     <Compile Include="Migrations\201701020518341_AddAttendance.Designer.cs">
       <DependentUpon>201701020518341_AddAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701041951252_AddFollowing.cs" />
+    <Compile Include="Migrations\201701041951252_AddFollowing.Designer.cs">
+      <DependentUpon>201701041951252_AddFollowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701042004138_AddFollowing1.cs" />
+    <Compile Include="Migrations\201701042004138_AddFollowing1.Designer.cs">
+      <DependentUpon>201701042004138_AddFollowing1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Attendance.cs" />
@@ -242,6 +250,7 @@
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\FutureDate.cs" />
     <Compile Include="ViewModels\GigFormViewModel.cs" />
+    <Compile Include="ViewModels\GigsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
@@ -305,6 +314,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\Create.cshtml" />
+    <Content Include="Views\Gigs\Attending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701020518341_AddAttendance.resx">
       <DependentUpon>201701020518341_AddAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701041951252_AddFollowing.resx">
+      <DependentUpon>201701041951252_AddFollowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701042004138_AddFollowing1.resx">
+      <DependentUpon>201701042004138_AddFollowing1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace GigHub.Dtos
+﻿namespace GigHub.Dtos
 {
     public class FollowingDto
     {
-        public int FollowId { get; set; }
+        public string FolloweeId { get; set; }
+
     }
 }
