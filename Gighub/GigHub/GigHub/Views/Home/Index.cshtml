@@ -18,11 +18,14 @@
             <div class="details">
                 <span class="artist">
                     @gig.Artist.Name
+                    <button data-gig-id="@gig.Id" class="btn btn-link js-toggle-follow">Follow me!</button>
                 </span>
                 <span class="genre">
                     @gig.Genre.Name
                 </span>
-                <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">Going?</button>
+                <button data-gig-id="@gig.Id" class="btn btn-default btn-sm pull-right js-toggle-attendance">
+                    Going?
+                </button>
             </div>
         </li> 
     }
@@ -31,11 +34,27 @@
 @section scripts 
 {
     <script>
+        $(document).ready(function () {
+            $(".js-toggle-follow").click(function (e) {
+                var followButton = $(e.target); //Query once
+                $.post("/api/following", { gigId: followButton.attr("data-gig-id") })
+                    .done(function () { //Alters the going button to reflect accepted follow
+                        followButton
+                            .removeClass("btn-link")
+                            .addClass("btn-success")
+                            .text("Following");
+                    })
+                    .fail(function () {
+                        alert("Something failed!");
+                    });
+            });
+        });
+
         $(document).ready(function() {
             $(".js-toggle-attendance").click(function (e) {
-                var button = $(e.target);
-                $.post("/api/attendances", button.attr("data-gig-id"))
-                    .done(function() {
+                var button = $(e.target); //Query once
+                $.post("/api/attendances", { gigId: button.attr("data-gig-id") })
+                    .done(function() { //Alters the going button to reflect accepted attendance
                         button
                             .removeClass("btn-default")
                             .addClass("btn-info")
