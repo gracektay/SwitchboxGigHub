@@ -3,7 +3,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<ul class="gigs">
+<h1>@Model.Heading</h1>
+
+<ul class="gigs voffset4">
     @foreach (var gig in Model.UpcomingGigs)
     {   
         <li>
@@ -43,7 +45,7 @@
             $(".js-toggle-follow").click(function (e) {
 //                debugger;
                 var followButton = $(e.target); //Query once
-                $.post("/api/following", { followeeId: followButton.attr("data-user-id") })
+                $.post("/api/followings", { followeeId: followButton.attr("data-user-id") })
                     .done(function () { //Alters the going button to reflect accepted follow
                         followButton
                             .text("Following");

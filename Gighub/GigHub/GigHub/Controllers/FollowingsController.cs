@@ -6,15 +6,15 @@ using System.Web.Http;
 
 namespace GigHub.Controllers
 {
-    public class FollowingController : ApiController
+    [Authorize]
+    public class FollowingsController : ApiController
     {
         private ApplicationDbContext _context;
 
-        public FollowingController()
+        public FollowingsController()
         {
             _context = new ApplicationDbContext();
         }
-
 
         [HttpPost]
         public IHttpActionResult Attend(FollowingDto dto)
