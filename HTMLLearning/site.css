@@ -1,0 +1,185 @@
+﻿html {
+    /*height: 100%;*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: 'Overpass', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.push-left {
+    float: left;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
+
+.body {
+    overflow: hidden;
+    min-height: calc(100vh - 120px);
+    clear: both;
+}
+
+.header {
+    height: 80px;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+}
+
+    .header h1 {
+        display: inline-block;
+        margin-top: 0px;
+        margin-left: 20px;
+    }
+
+    .header .absolute {
+        top: 20px;
+        right: 40px;
+    }
+
+        .header .absolute a {
+            text-decoration: none;
+            color: lightblue;
+            margin: 20px;
+        }
+
+            .header .absolute a:hover {
+                font-weight: bolder;
+                color: white;
+            }
+
+.banner h2 {
+    text-align: center;
+}
+
+.banner img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+}
+
+.unslider-arrow.next {
+    right: 20% !important;
+}
+.unslider-arrow.prev {
+    left: 20% !important;
+}
+.page-content {
+    max-width: 960px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.section {
+    width: 960px;
+    height: auto;
+}
+
+.triColumn {
+    width: 320px;
+}
+
+.grayBackground {
+    background-color: #f3f3f3;
+}
+
+.columnPadding {
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 60px;
+}
+
+    .columnPadding img {
+        width: 280px;
+        height: auto;
+    }
+
+.twoThirdsColumn {
+    width: 640px;
+    height: auto;
+}
+
+.oneThirdColumn {
+    width: 320px;
+    height: auto;
+    clear: right;
+}
+
+.well {
+    background-color: #f3f3f3;
+    border: 2px solid grey;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+    .well a {
+        text-decoration: none;
+        color: gray;
+    }
+
+        .well a:hover {
+            font-weight: bolder;
+            color: gray;
+        }
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-color: gray;
+    margin-top: 60px;
+}
+
+    .footer .section {
+        margin: auto;
+    }
+
+    .footer .triColumn img {
+        width: 30px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .footer .triColumn a img:hover {
+        width: 32px;
+        height: auto;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: lightblue;
+    }
+
+        .footer a:hover {
+            font-weight: bolder;
+            color: white;
+        }
